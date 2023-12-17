@@ -13,4 +13,4 @@ releaseService = resultObj[0]['release-service']['data']
 
 for audit in releaseService:
     json_object = json.dumps(audit, indent = 4) 
-    requests.post('http://34.73.174.64:8529/_db/_system/foxx/audit', data=json_object)
+    requests.post(config['DB_URL'], data=json_object)
